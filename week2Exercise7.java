@@ -34,12 +34,10 @@ public class week2Exercise7 {
                 String classV = obj1.nextLine();
 
                 switch (classV) {
-                    case "Econemy" ->
-                        classCHECK(seats, "Econemy", "First Class", 0, 4);
-                    case "First Class" ->
-                        classCHECK(seats, "First Class", "Econemy", 5, 9);
-                    default ->
-                        System.out.println("you have entered an invalid class enter [First Class or Econemy]");
+                    case "Econemy" -> classCHECK(seats, "Econemy", "First Class", 0, 4);
+                    case "First Class" -> classCHECK(seats, "First Class", "Econemy", 5, 9);
+                    default -> System.out.println("you have entered an invalid class enter [First Class or Econemy]");
+                   
                 }
 
             }
@@ -101,9 +99,10 @@ public class week2Exercise7 {
 
         boolean isFull = true;
 
-        for (int i = start; i == (end - 1); i++) { // 0 , 1, 2, 3, 4
+        for (int i = start; i <= end; i++) { // 0 , 1, 2, 3, 4
             if (seats[i] == false) {
                 isFull = false;
+                System.out.println(i);
             }
         }
         return isFull;
@@ -142,7 +141,7 @@ public class week2Exercise7 {
                     if (className.equals("First Class")) {
                         classCHECK(seats, otherClass, className, 5, 9);
                     } else {
-                        classCHECK(seats, otherClass, className, 0, 5);
+                        classCHECK(seats, otherClass, className, 0, 4);
                     }
                 } else {
                     System.out.println("the next flight is in 3 hours");
